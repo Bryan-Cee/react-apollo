@@ -2,12 +2,12 @@ import React, {Component} from 'react';
 import {Mutation} from "react-apollo";
 
 import '../styles/addStar.css'
-import {addStarQuery} from "../queries";
+import {ADD_STAR} from "../queries";
 
 class AddStar extends Component {
   render() {
     return (
-      <Mutation mutation={addStarQuery} >
+      <Mutation mutation={ADD_STAR} >
         {(addStar, { data, loading, error }) => {
           return(
             <div className="addActionButton">
@@ -16,6 +16,7 @@ class AddStar extends Component {
                   addStar({ variables: { repoId: this.props.id } }).then(
                     response => {
                       this.props.refetch();
+                      console.log(response);
                     }
                   );
                 }}

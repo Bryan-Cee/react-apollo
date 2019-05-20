@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from '../components/App';
 import {MockedProvider} from "react-apollo/test-utils";
 
-it('renders without crashing', () => {
+it.skip('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
     <MockedProvider>

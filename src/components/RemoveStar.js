@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { Mutation } from "react-apollo";
 
 import '../styles/removeStar.css';
-import { removeStarQuery } from "../queries";
+import { REMOVE_STAR } from "../queries";
 
 class RemoveStar extends Component {
   render() {
     return (
-      <Mutation mutation={removeStarQuery}>
+      <Mutation mutation={REMOVE_STAR}>
         {(removeStar, { data, loading, error }) => {
           return (
             <div className="removeActionButton">

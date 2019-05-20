@@ -1,14 +1,14 @@
 import React from 'react';
-import { Query } from 'react-apollo/index';
+import { Query } from 'react-apollo';
 
-import { userQuery } from '../queries';
+import { GET_USER } from '../queries';
 import '../styles/App.css';
 import Repositories from "./Repositories";
 
 function App() {
   return (
     <div className="App">
-      <Query query={ userQuery }>
+      <Query query={ GET_USER }>
         {({ data, error, loading }) => {
           if (loading) return <p>loading...</p>;
           if (error) return <p>{error.message}</p>;

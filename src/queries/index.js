@@ -1,6 +1,6 @@
-import { gql } from "apollo-boost/lib/index";
+import { gql } from "apollo-boost";
 
-export const userQuery = gql`
+export const GET_USER = gql`
   query GetNameAndEmail{
     viewer {
       name
@@ -9,7 +9,7 @@ export const userQuery = gql`
   }
 `;
 
-export const reposQuery = gql`
+export const GET_REPOS = gql`
   query Repositories($first: Int!){
     viewer {
       repositories(first: $first) {
@@ -28,7 +28,7 @@ export const reposQuery = gql`
   }
 `;
 
-export const addStarQuery = gql`
+export const ADD_STAR = gql`
   mutation AddStar($repoId: ID!) {
     addStar(input: { starrableId: $repoId }) {
       starrable {
@@ -41,7 +41,7 @@ export const addStarQuery = gql`
   }
 `;
 
-export const removeStarQuery = gql`
+export const REMOVE_STAR = gql`
   mutation RemoveStar($repoId: ID!) {
     removeStar(input: { starrableId: $repoId}) {
       starrable {

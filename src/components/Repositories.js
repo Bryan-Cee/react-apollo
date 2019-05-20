@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Query } from "react-apollo/index";
+import { Query } from "react-apollo";
 
-import { reposQuery } from '../queries';
+import { GET_REPOS } from '../queries';
 import DisplayRepositories from "./DisplayRepositories";
 
 class Repositories extends Component {
@@ -18,7 +18,7 @@ class Repositories extends Component {
   };
   render() {
     return (
-      <Query query={ reposQuery } variables={{ first: 10 }}>
+      <Query query={ GET_REPOS } variables={{ first: 10 }}>
         {({ data, loading, error, fetchMore, refetch }) => {
           if (loading) return <p>loading...</p>;
           if (error) return <p>{error.message}</p>;
