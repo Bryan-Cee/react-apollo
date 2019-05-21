@@ -38,7 +38,7 @@ describe('AddStar Component', () => {
     )
   });
 
-  it.only('should call a mutation when the button is clicked',async function () {
+  it.only('should have a loading state when add star button is clicked',async function () {
     const wrapper = mount(
       <MockedProvider mocks={mocks} addTypename={false}>
         <AddStar/>
